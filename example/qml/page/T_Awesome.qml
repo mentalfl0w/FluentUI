@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Window 2.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Window 2.15
 import FluentUI 1.0
 
 FluContentPage {
@@ -33,6 +33,7 @@ FluContentPage {
         cellWidth: 80
         cellHeight: 80
         clip: true
+        boundsBehavior: GridView.StopAtBounds
         model:FluApp.awesomelist()
         ScrollBar.vertical: FluScrollBar {}
         anchors{

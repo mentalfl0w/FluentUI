@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.0
 import FluentUI 1.0
 import example 1.0
@@ -23,6 +23,10 @@ CustomWindow {
     closeFunc:function(event){
         dialog_close.open()
         event.accepted = false
+    }
+
+    Component.onCompleted: {
+        FluTools.setQuitOnLastWindowClosed(false)
     }
 
     Connections{

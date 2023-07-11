@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import FluentUI 1.0
 
 Button {
@@ -28,6 +28,11 @@ Button {
     }
     property var clickListener : function(){
         checked = !checked
+    }
+    onCheckableChanged: {
+        if(checkable){
+            checkable = false
+        }
     }
     property color pressedColor: FluTheme.dark ? Qt.darker(normalColor,1.2) : Qt.lighter(normalColor,1.2)
     Accessible.role: Accessible.Button

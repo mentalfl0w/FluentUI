@@ -1,6 +1,6 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import FluentUI 1.0
 
 Button {
@@ -17,6 +17,11 @@ Button {
     property real textSpacing: 6
     property var clickListener : function(){
         checked = !checked
+    }
+    onCheckableChanged: {
+        if(checkable){
+            checkable = false
+        }
     }
     Accessible.role: Accessible.Button
     Accessible.name: control.text

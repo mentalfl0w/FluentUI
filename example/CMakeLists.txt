@@ -15,14 +15,14 @@ endif()
 file(TO_CMAKE_PATH "/" PATH_SEPARATOR)
 
 #设置版本号
-add_definitions(-DVERSION=1,3,7,3)
+add_definitions(-DVERSION=1,3,7,4)
 
 #判断FluentUI库类型
 if(FLUENTUI_BUILD_STATIC_LIB)
     add_definitions(-DFLUENTUI_BUILD_STATIC_LIB)
 endif()
 
-find_package(Qt5 REQUIRED COMPONENTS Quick)
+find_package(Qt5 REQUIRED COMPONENTS Quick Svg)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -93,7 +93,8 @@ set_target_properties(example PROPERTIES
 
 #链接库
 target_link_libraries(example PRIVATE
-    Qt${QT_VERSION_MAJOR}::Quick
+    Qt::Quick
+    Qt::Svg
     fluentuiplugin
     FramelessHelper::Core
     FramelessHelper::Quick

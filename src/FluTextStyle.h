@@ -17,10 +17,6 @@ public:
     Q_PROPERTY_AUTO(QFont,Title);
     Q_PROPERTY_AUTO(QFont,TitleLarge);
     Q_PROPERTY_AUTO(QFont,Display);
-    QML_NAMED_ELEMENT(FluTextStyle)
-    QML_SINGLETON
-signals:
-
 private:
     static FluTextStyle* m_instance;
 

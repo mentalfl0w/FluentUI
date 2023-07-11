@@ -1,6 +1,6 @@
 pragma Singleton
 
-import QtQuick 2.12
+import QtQuick 2.15
 import FluentUI 1.0
 
 FluObject{
@@ -331,6 +331,12 @@ FluObject{
             onTap:{
                 item_other.count = 0
                 navigationView.push("qrc:/example/qml/page/T_RemoteLoader.qml")
+            }
+        }
+        FluPaneItem{
+            title:"HotLoader"
+            tapFunc:function(){
+                 FluApp.navigate("/hotload")
             }
         }
     }

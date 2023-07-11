@@ -7,6 +7,7 @@
 #include <FramelessHelper/Quick/framelessquickmodule.h>
 #include <FramelessHelper/Core/private/framelessconfig_p.h>
 #include "src/component/CircularReveal.h"
+#include "src/component/FileWatcher.h"
 #include "AppInfo.h"
 
 FRAMELESSHELPER_USE_NAMESPACE
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
     FramelessConfig::instance()->set(Global::Option::DisableLazyInitializationForMicaMaterial);
     FramelessConfig::instance()->set(Global::Option::CenterWindowBeforeShow);
     FramelessConfig::instance()->set(Global::Option::ForceNonNativeBackgroundBlur);
-    FramelessConfig::instance()->set(Global::Option::EnableBlurBehindWindow);
+    FramelessConfig::instance()->set(Global::Option::EnableBlurBehindWindow,false);
 #ifdef Q_OS_MACOS
     FramelessConfig::instance()->set(Global::Option::ForceNonNativeBackgroundBlur,false);
 #endif
@@ -37,7 +38,6 @@ int main(int argc, char *argv[])
     if(!appInfo->isOwnerProcess(&ipc)){
         return 0;
     }
-    app.setQuitOnLastWindowClosed(false);
     QQmlApplicationEngine engine;
     FramelessHelper::Quick::registerTypes(&engine);
 #ifdef FLUENTUI_BUILD_STATIC_LIB
@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
     //qobject_cast<QQmlExtensionPlugin*>(qt_static_plugin_FluentUIPlugin().instance())->registerTypes("FluentUI");
 #endif
     qmlRegisterType<CircularReveal>("example", 1, 0, "CircularReveal");
+    qmlRegisterType<FileWatcher>("example", 1, 0, "FileWatcher");
     appInfo->init(&engine);
     const QUrl url(QStringLiteral("qrc:/example/qml/App.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

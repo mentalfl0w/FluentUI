@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
 import FluentUI 1.0
 import org.wangwenx190.FramelessHelper 1.0
 
@@ -48,16 +48,6 @@ FluWindow {
             if (blurBehindWindowEnabled)
                 window.backgroundVisible = false
             window.show()
-        }
-    }
-    Connections{
-        target: FluTheme
-        function onDarkChanged(){
-            console.log(FramelessUtils.systemTheme)
-            if (FluTheme.dark)
-                FramelessUtils.systemTheme = FramelessHelperConstants.Dark
-            else
-                FramelessUtils.systemTheme = FramelessHelperConstants.Light
         }
     }
 

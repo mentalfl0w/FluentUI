@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.15
 import QtGraphicalEffects 1.0
 import FluentUI 1.0
 

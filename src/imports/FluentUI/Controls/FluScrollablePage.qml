@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
 import FluentUI 1.0
 
 FluPage {
@@ -38,7 +38,6 @@ FluPage {
             bottom: parent.bottom
             bottomMargin: control.bottomPadding
         }
-        maximumFlickVelocity: 1680
         contentWidth: parent.width
         contentHeight: container.height
         ScrollBar.vertical: FluScrollBar {

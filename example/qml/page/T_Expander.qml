@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Window 2.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Window 2.15
 import FluentUI 1.0
 import "qrc:///example/qml/component"
 
@@ -58,7 +58,6 @@ FluScrollablePage{
                         width: parent.width
                         height: parent.height
                         contentWidth: width
-                        maximumFlickVelocity: 1680
                         contentHeight: text_info.height
                         ScrollBar.vertical: FluScrollBar {}
                         FluText{

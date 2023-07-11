@@ -1,7 +1,7 @@
-import QtQuick 2.12
-import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Templates 2.12 as T
+import QtQuick 2.15
+import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Templates 2.15 as T
 import FluentUI 1.0
 
 T.Menu {
@@ -49,11 +49,5 @@ T.Menu {
         border.width: 1
         radius: 5
         FluShadow{}
-    }
-    T.Overlay.modal: Rectangle {
-        color: Color.transparent(control.palette.shadow, 0.5)
-    }
-    T.Overlay.modeless: Rectangle {
-        color: Color.transparent(control.palette.shadow, 0.12)
     }
 }
